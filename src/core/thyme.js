@@ -18,8 +18,16 @@ export function calculateDuration(from: string, to: string): number {
   if (toDate < fromDate) {
     return 0;
   }
+  const duration = differenceInMinutes(to, from);
+  if (isNaN(duration)) {
+    return 0;
+  }
 
+<<<<<<< Updated upstream
   return differenceInMinutes(toDate, fromDate);
+=======
+  return duration;
+>>>>>>> Stashed changes
 }
 
 export function formatDuration(duration: number): string {
