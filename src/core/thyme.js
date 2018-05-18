@@ -12,8 +12,9 @@ export function calculateDuration(from: Date, to: Date): number {
   if (isBefore(to, from)) {
     return 0;
   }
-
-  return differenceInMinutes(to, from);
+  let duration = differenceInMinutes (to,from);
+  duration = isNaN(duration) ? 0 : duration;
+  return duration;
 }
 
 export function formatDuration(duration: number): string {
